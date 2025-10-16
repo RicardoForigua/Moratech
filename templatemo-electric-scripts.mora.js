@@ -1,4 +1,4 @@
-// Electric Xtra — ajustes tema mora + carrusel
+
 (function(){
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
