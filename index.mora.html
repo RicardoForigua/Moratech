@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoraTech | Pantallas y Repuestos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ethnocentric" rel="stylesheet">
+  <link rel="stylesheet" href="moratech.css">
+</head>
+
+<body>
+  <!-- Modal de producto -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h4 id="modalTitle">Detalle del producto</h4>
+        <button class="modal-close" id="modalClose">Cerrar</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-media"><img id="modalImg" src="" alt=""></div>
+        <div class="modal-text">
+          <p id="modalMeta"></p>
+          <p id="modalDesc">Calidad verificada, compatibilidad por modelo y soporte especializado. Pregunta por stock y tiempos de entrega.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmacion de contacto -->
+  <div class="modal feedback-modal" id="feedbackModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
+      <div class="modal-body feedback-body">
+        <div class="feedback-icon" aria-hidden="true">&#10003;</div>
+        <h4 class="feedback-title" id="feedbackTitle" data-feedback-title>Solicitud recibida</h4>
+        <p class="feedback-text" data-feedback-text>Gracias, recibimos tu solicitud. Te contactaremos pronto.</p>
+        <button class="feedback-close" type="button" data-feedback-close>Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp flotante -->
+  <div class="wa-widget" id="waWidget">
+    <button class="wa-fab" id="waFab" aria-label="WhatsApp">
+      <img class="wa-icon" src="./whatsapp.png" alt="WhatsApp">
+    </button>
+    <div class="wa-card" id="waCard" role="dialog" aria-hidden="true">
+      <div class="wa-header">
+        <div class="wa-title"><strong>WhatsApp</strong></div>
+        <button class="wa-close" id="waClose" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="wa-body">
+        <div class="wa-bubble">Hola, &iquest;en qu&eacute; podemos ayudarte?</div>
+        <a class="wa-action" href="https://wa.me/573233848154?text=Hola%20MoraTech" target="_blank" rel="noopener">Abrir chat</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-hero" id="home">
+    <nav class="top-nav">
+      <div class="nav-inner">
+        <a class="brand" href="#home" aria-label="MoraTech">
+          <span class="brand-mark"></span>
+          <span class="brand-name"><span class="brand-mora">Mora</span><span class="brand-tech">Tech</span></span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a class="nav-item" href="#home">Inicio</a></li>
+          <li><a class="nav-item" href="#about">Acerca de nosotros</a></li>
+          <li><a class="nav-item" href="#proveedores">Proveedores</a></li>
+          <li><a class="nav-item" href="#catalogo">Cat&aacute;logo</a></li>
+          <li><a class="nav-item" href="#contacto">Cont&aacute;ctenos</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" id="menuToggle" aria-label="Abrir men&uacute;">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-slider full" id="heroSlider">
+      <div class="hero-slide active">
+        <img src="assets/Banner5.png" alt="Soluciones audiovisuales premium">
+      </div>
+      <div class="hero-slide">
+        <img src="assets/Banner1.jpg" alt="Pizarras interactivas y video wall">
+      </div>
+      <div class="hero-slide">
+        <img src="assets/Banner2.jpg" alt="Kioscos digitales y carteler&iacute;a">
+      </div>
+      <div class="hero-slide">
+        <img src="assets/Banner3.jpg" alt="Monitores profesionales en sala de juntas">
+      </div>
+      <div class="hero-slide">
+        <img src="assets/Banner4.jpeg" alt="Pantallas LED para eventos">
+      </div>
+      <button class="hero-nav prev" id="heroPrev" type="button" aria-label="Anterior">&#10094;</button>
+      <button class="hero-nav next" id="heroNext" type="button" aria-label="Siguiente">&#10095;</button>
+      <div class="hero-dots" id="heroDots" aria-label="Indicadores de carrusel"></div>
+    </div>
+  </header>
+
+  <section class="about" id="about">
+    <div class="about-layout">
+      <div class="about-text">
+        <p class="eyebrow">Nuestra empresa</p>
+        <h2 class="section-title">Acerca de MoraTech</h2>
+        <p class="about-paragraph">
+          La fundadora de MORATECH a posicionado por m&aacute;s de 2 d&eacute;cadas en el mercado colombiano y de Latinoam&eacute;rica las m&aacute;s prestigiosas marcas de audiovisual, MORATECH surgi&oacute; con la visi&oacute;n de apoyar a marcas de nivel mundial para que puedan llegar a los mercados emergentes y con esto ayudar a mejorar la tecnolog&iacute;a en nuestra regi&oacute;n tomada de la mano de la transformaci&oacute;n digital.
+        </p>
+        <p class="about-paragraph">
+          Desde entonces ha creado un equipo alterno compuesto por profesionales apasionados por el audiovisual y la tecnolog&iacute;a que nos ayudan de manera directa e indirecta, dedicados a ofrecer soluciones innovadoras y los servicios para poner en marcha las soluciones sugeridas a nuestros clientes.
+        </p>
+
+        <a class="about-cta" href="#contacto">M&aacute;s informaci&oacute;n</a>
+      </div>
+      <div class="about-video">
+        <div class="video-frame">
+          <video id="aboutVideo" controls >
+            <source src="Video.mp4" type="video/mp4">
+            Tu navegador no soporta el video HTML5.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-mv-row" aria-label="Misi&oacute;n y Visi&oacute;n">
+      <article class="about-mv-card">
+        <div class="about-mv-title">
+          <span class="about-mv-tag">Misi&oacute;n</span>
+          <span class="about-mv-line"></span>
+        </div>
+        <p class="about-paragraph">
+          Impulsar el &eacute;xito de nuestros clientes mediante la venta de soluciones audiovisuales innovadoras tra&iacute;das directamente de las f&aacute;bricas que desarrollan los productos para las marcas m&aacute;s reconocidas, creando una nueva manera de hacer negocio con esto traer siempre las &uacute;ltimas tecnolog&iacute;as de las cuales se beneficiaran sectores como el de educaci&oacute;n y tener profesionales mejor capacitados con el uso de estas soluciones.
+        </p>
+      </article>
+      <article class="about-mv-card alt">
+        <div class="about-mv-title">
+          <span class="about-mv-tag">Visi&oacute;n</span>
+          <span class="about-mv-line"></span>
+        </div>
+        <p class="about-paragraph">
+          Ser reconocidos como representante n&uacute;mero uno de soluciones audiovisuales integradas con el servicio queremos aparte de vender el hardware tambi&eacute;n bridar la venta del servicio &quot;INSTALACION, MANETNIMIENTO Y REPARACION&quot; ayudado a reselleres y distribuidores a generar nuevos negocios y proyectos con todo el respaldo t&eacute;cnico.
+        </p>
+      </article>
+    </div>
+    <div class="metrics-grid about-stats" id="metricas">
+      <div class="metric-card">
+        <span class="metric-value" data-counter data-target="80" data-suffix="+">0</span>
+        <span class="metric-label">Ferias y eventos cubiertos</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value" data-counter data-target="28">0</span>
+        <span class="metric-label">A&ntilde;os de experiencia</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value" data-counter data-target="4000" data-suffix="+">0</span>
+        <span class="metric-label">Clientes atendidos</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value" data-counter data-target="1000" data-suffix="+">0</span>
+        <span class="metric-label">Partners felices</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="suppliers" id="proveedores">
+    <div class="section-header">
+      <h2 class="section-title">Nuestros proveedores</h2>
+    </div>
+    <div class="suppliers-wrap">
+      <div class="logo-panel">
+        <div class="logo-track">
+          <img src="assets/Proveedores/Proveedor1.png" alt="proveedor1">
+          <img src="assets/Proveedores/Proveedor2.png" alt="proveedor2">
+          <img src="assets/Proveedores/Proveedor3.png" alt="proveedor3">
+          <img src="assets/Proveedores/Proveedor4.png" alt="proveedor4">
+          <img src="assets/Proveedores/Proveedor5.png" alt="proveedor5">
+          <img src="assets/Proveedores/Proveedor6.png" alt="proveedor6">
+          <img src="assets/Proveedores/Proveedor7.png" alt="proveedor7">
+          <img src="assets/Proveedores/Proveedor1.png" alt="proveedor1">
+          <img src="assets/Proveedores/Proveedor2.png" alt="proveedor2">
+          <img src="assets/Proveedores/Proveedor3.png" alt="proveedor3">
+          <img src="assets/Proveedores/Proveedor4.png" alt="proveedor4">
+          <img src="assets/Proveedores/Proveedor5.png" alt="proveedor5">
+          <img src="assets/Proveedores/Proveedor6.png" alt="proveedor6">
+          <img src="assets/Proveedores/Proveedor7.png" alt="proveedor7">
+        </div>
+      </div>
+      <div class="suppliers-info">
+        <h3>Lo que nos respalda</h3>
+        <ul>
+          <li>Tiempos de entrega</li>
+          <li>Distribuidores directos de marcas reconocidas</li>
+          <li>Contamos con un equipo altamente capacitado</li>
+          <li>Garant&iacute;a de cada uno de nuestros productos</li>
+          <li>Creaci&oacute;n de campa&ntilde;as de alto impacto</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalogo">
+    <div class="section-header">
+      <h2 class="section-title">Cat&aacute;logo de productos</h2>
+    </div>
+    <div class="catalog-grid" id="catalogoTrack">
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://digitalsignageweb.com/wp-content/uploads/2022/03/Totems-publicitarios.jpg" alt="Totems interactivos">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">T&oacute;tems interactivos</h3>
+          <p class="product-meta">Indoor y outdoor con pantallas de alto brillo.</p>
+          <div class="card-actions">
+            <a href="#" class="btn ghost" data-details="true" data-desc="Totems interactivos con sensores, lectores y software remoto para operar 24/7.">Ver m&aacute;s</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://www.avasoluciones.com/wp-content/uploads/2021/08/Kiosco-interactivo-21pul.jpg" alt="Kioscos interactivos">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">Kioscos interactivos</h3>
+          <p class="product-meta">Autoservicio, check-in y pagos.</p>
+          <div class="card-actions">
+            <a href="#" class="btn ghost" data-details="true" data-desc="Kioscos con QR, NFC, impresora t&eacute;rmica y administraci&oacute;n remota.">Ver m&aacute;s</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://cdn.prod.website-files.com/601025e375b2205d4ba776f0/601025e375b2201c49a77823_5e459f71c38ccca7628a8a23_Ondemand-ZeroQ-sc.png" alt="Pantalla de turnos">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">Pantallas de turnos</h3>
+          <p class="product-meta">Audio, numeraci&oacute;n y panel de estad&iacute;sticas.</p>
+          <div class="card-actions">
+            <a href="#" class="btn ghost" data-details="true" data-desc="Integraci&oacute;n con kiosco, colas m&uacute;ltiples y tableros KPI.">Ver m&aacute;s</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://speechi.com/wp-content/uploads/2024/06/aplicacion-pizarra-interactiva-note-iolaos-touchify.jpg" alt="Pizarras interactivas">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">Pizarras interactivas</h3>
+          <p class="product-meta">Educaci&oacute;n, salas de juntas y BYOD.</p>
+          <div class="card-actions">
+            <a href="#" class="btn ghost" data-details="true" data-desc="Pantallas 4K t&aacute;ctiles con casting inal&aacute;mbrico y software colaborativo.">Ver m&aacute;s</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://http2.mlstatic.com/D_Q_NP_2X_694722-MLA92028257591_092025-P.webp" alt="Proyectores y videomapping">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">Proyectores y videomapping</h3>
+          <p class="product-meta">L&aacute;ser de alto brillo y blending creativo.</p>
+          <div class="card-actions">
+            <a href="proyectores.mora.html" class="btn ghost">Ver m&aacute;s</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://www.telelogos.com/wp-content/uploads/2024/02/Carrera-2-jpg.webp" alt="Men&uacute; boards y carteler&iacute;a">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">Carteler&iacute;a digital</h3>
+          <p class="product-meta">QSR, retail y corporativo.</p>
+          <div class="card-actions">
+            <a href="#" class="btn ghost" data-details="true" data-desc="Plantillas de marca, programaci&oacute;n por franjas y monitoreo 24/7.">Ver m&aacute;s</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media">
+          <img src="soporte.jpg" alt="Soportes y estructuras para pantallas">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">Soportes y estructuras</h3>
+          <p class="product-meta">Montaje profesional para pantallas, videowall y proyectores.</p>
+          <div class="card-actions">
+            <a href="#" class="btn ghost" data-details="true" data-desc="Soportes de pared, piso y techo; estructuras para videowall y soluciones a medida.">Ver m&aacute;s</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="section-header">
+      <h2 class="section-title">Cont&aacute;ctanos</h2>
+    </div>
+    <div class="contact-container">
+      <form class="contact-form" action="envio_correo.php" method="POST">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Correo</label>
+          <input type="email" name="email" placeholder="tucorreo@dominio.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="&iquest;C&oacute;mo podemos ayudarte?" required></textarea>
+        </div>
+        <button class="submit-btn">Enviar</button>
+      </form>
+      <div class="contact-info">
+        <h3>Soporte y ventas</h3>
+        <div class="info-item">
+          <div class="info-icon">&#9743;</div>
+          <div class="info-details">
+            <h4>Tel&eacute;fono</h4>
+            <p>+57 323 384 8154</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#9993;</div>
+          <div class="info-details">
+            <h4>Email</h4>
+            <p>servicios@moratech.net</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#home">Inicio</a>
+        <a href="#about">Acerca de nosotros</a>
+        <a href="#proveedores">Proveedores</a>
+        <a href="#catalogo">Cat&aacute;logo</a>
+        <a href="#contacto">Cont&aacute;ctenos</a>
+      </div>
+      <p class="copyright">&copy; 2025 MoraTech</p>
+    </div>
+  </footer>
+
+  <script src="moratech.js"></script>
+</body>
+</html>
